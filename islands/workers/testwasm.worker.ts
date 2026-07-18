@@ -1,16 +1,19 @@
+import { ChildHandshake, LocalHandle, WorkerMessenger } from "post-me";
 import { add } from "../wasm/lib/rs_lib.js";
-console.log("22 + 44 =", add(22, 44));
 
-// console.log(add);
+import { WorkerEvents, WorkerMethods } from "./testwasm.types.ts";
 
-self.onmessage = ({ data }) => {
-  console.log("Test WASM-WORKER", data);
-  const sum = add(33, 55);
-  // console.log("sum in WASM-WORKER:", sum);
-  self.postMessage("Test WASM-WORKER is working: 33 + 55 = " + sum);
-  // self.postMessage("Test WASM-WORKER is working");
+const methods: WorkerMethods = {
+  standard_sum: (x: number, y: number) => x + y,
+  wasm_sum: (x: number, y: number) => add(x, y),
 };
 
-// const sum = (a: number, b: number) => {
-//   return add(a, b);
-// };
+const messenger = new WorkerMessenger({ worker: self as any });
+
+ChildHandshake(messenger, methods).then((connection) => {
+  const localHandle: LocalHandle<WorkerMethods, WorkerEvents> = connection
+    .localHandle();
+
+  // Emit custom events to the worker
+  // localHandle.emit("ping", "Oh, hi!");
+});

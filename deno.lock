@@ -50,6 +50,7 @@
     "npm:esbuild-wasm@~0.25.11": "0.25.12",
     "npm:esbuild@0.25.7": "0.25.7",
     "npm:esbuild@~0.25.5": "0.25.12",
+    "npm:post-me@~0.4.5": "0.4.5",
     "npm:preact-render-to-string@^6.6.3": "6.7.0_preact@10.29.7",
     "npm:preact@^10.28.2": "10.29.7_preact-render-to-string@6.7.0",
     "npm:preact@^10.29.1": "10.29.7_preact-render-to-string@6.7.0",
@@ -1218,6 +1219,9 @@
     "picomatch@4.0.5": {
       "integrity": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A=="
     },
+    "post-me@0.4.5": {
+      "integrity": "sha512-XgPdktF/2M5jglgVDULr9NUb/QNv3bY3g6RG22iTb5MIMtB07/5FJB5fbVmu5Eaopowc6uZx7K3e7x1shPwnXw=="
+    },
     "postcss@8.5.19": {
       "integrity": "sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==",
       "dependencies": [
@@ -1334,6 +1338,7 @@
       "jsr:@fresh/plugin-vite@^1.1.2",
       "npm:@preact/signals@^2.9.0",
       "npm:@types/babel__core@^7.20.5",
+      "npm:post-me@~0.4.5",
       "npm:preact@^10.29.1",
       "npm:vite-plugin-wasm@^3.6.0",
       "npm:vite@^7.1.3",
