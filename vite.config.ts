@@ -5,6 +5,7 @@ import wasm from "npm:vite-plugin-wasm@3.6.0";
 export default defineConfig({
   plugins: [fresh(), wasm()],
   worker: {
+    plugins: () => [wasm()],
     format: "es",
   },
 });
