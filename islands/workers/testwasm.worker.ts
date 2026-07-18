@@ -1,4 +1,4 @@
-import { add } from "../wasm/lib/rs_lib.js";
+import { add } from "../wasm/lib/rs_lib.wasm";
 console.log("Test WASM-WORKER running", add(33, 55));
 
 self.onmessage = ({ data }) => {
