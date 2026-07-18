@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 
-export function TestWorker() {
+export function TestWorkerWasm() {
   const workerRef = useRef<Worker | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
   useEffect(() => {
     workerRef.current = new Worker(
-      new URL("./workers/test.worker.ts", import.meta.url),
+      new URL("./workers/testwasm.worker.ts", import.meta.url),
       { type: "module" },
     );
 
@@ -27,7 +27,7 @@ export function TestWorker() {
 
   return (
     <>
-      <h1>Hello from TestWorker</h1>
+      <h1>Hello from TestWorkerWasm</h1>
       <div>message: {message}</div>
     </>
   );

@@ -1,4 +1,4 @@
 self.onmessage = ({ data }) => {
-  console.log("Received message in worker", data);
-  self.postMessage("this is working");
+  console.log("Test WORKER", data);
+  self.postMessage("Test WORKER is working");
 };

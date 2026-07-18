@@ -1,6 +1,7 @@
-import TestWorker from "@/islands/TestWorker.tsx";
 import { define } from "../utils.ts";
+import { TestWorker } from "@/islands/TestWorker.tsx";
 import { TestWasm } from "@/islands/TestWasm.tsx";
+import { TestWorkerWasm } from "@/islands/TestWorkerWasm.tsx";
 
 export default define.page(function Home() {
   return (
@@ -10,6 +11,7 @@ export default define.page(function Home() {
       </h1>
       <TestWorker />
       <TestWasm />
+      <TestWorkerWasm />
     </div>
   );
 });
