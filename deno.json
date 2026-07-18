@@ -6,7 +6,7 @@
     "build": "vite build",
     "start": "deno serve -A _fresh/server.js",
     "update": "deno run -A -r jsr:@fresh/update .",
-    "wasmbuild": "deno run -A jsr:@deno/wasmbuild@^0.0.3"
+    "wasmbuild": "deno run -A jsr:@deno/wasmbuild@0.22.0"
   },
   "lint": {
     "rules": {
@@ -16,12 +16,14 @@
   "exclude": ["**/_fresh/*"],
   "imports": {
     "@/": "./",
+    "@deno/wasmbuild": "jsr:@deno/wasmbuild@^0.22.0",
     "fresh": "jsr:@fresh/core@^2.3.3",
     "preact": "npm:preact@^10.29.1",
     "@preact/signals": "npm:@preact/signals@^2.9.0",
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.1.2",
     "vite": "npm:vite@^7.1.3",
     "@types/babel__core": "npm:@types/babel__core@^7.20.5",
+    "vite-plugin-wasm": "npm:vite-plugin-wasm@^3.6.0",
     "wasmbuild": "npm:wasmbuild@^0.0.3"
   },
   "compilerOptions": {

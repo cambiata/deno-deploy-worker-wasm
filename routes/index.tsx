@@ -1,5 +1,6 @@
 import TestWorker from "@/islands/TestWorker.tsx";
 import { define } from "../utils.ts";
+import { TestWasm } from "@/islands/TestWasm.tsx";
 
 export default define.page(function Home() {
   return (
@@ -8,6 +9,7 @@ export default define.page(function Home() {
         deno-deploy-worker-wasm
       </h1>
       <TestWorker />
+      <TestWasm />
     </div>
   );
 });

@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 export default function TestWorker() {
   const workerRef = useRef<Worker | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
 
   useEffect(() => {
     workerRef.current = new Worker(
@@ -11,6 +12,7 @@ export default function TestWorker() {
 
     workerRef.current.onmessage = ({ data }) => {
       console.log("Received message in main thread:", data);
+      setMessage(data);
     };
 
     workerRef.current.postMessage("Message from main thread");
@@ -25,7 +27,8 @@ export default function TestWorker() {
 
   return (
     <>
-      <div>hello from the island</div>
+      <h1>Hello from TestWorker</h1>
+      <div>message: {message}</div>
     </>
   );
 }
